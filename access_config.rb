@@ -5,7 +5,17 @@ class AccessConfig
   end
 
   def access_token
-    @config["access_token"]
+    extract "access_token"
+  end
+
+  def city
+    extract "city"
+  end
+
+  private
+
+  def extract key
+    @config[key] || ""
   end
 
 end

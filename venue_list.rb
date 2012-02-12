@@ -8,6 +8,7 @@ class VenueList
   def initialize user
     @count     = 0
     @user      = user
+    @filters   = VenueFilter.new
   end
 
   def all
@@ -29,8 +30,8 @@ class VenueList
     @count = hash["count"] if @count != hash["count"]
     hash["items"].each do |item|
       @venues = [] if venues.nil?
-      venue = item["venue"]
-      @venues << Venue.new(venue["id"], venue["name"], venue["location"]["lat"], venue["location"]["lng"])
+      venue_details = Venue.new(item["venue"], item["beenHere"])
+      (@venues << venue_details) unless @filters.exclude?(venue_details)
     end
   end
 

@@ -1,12 +1,14 @@
 class Venue
 
-  attr_accessor :id, :name, :lat, :long
+  attr_accessor :id, :name, :lat, :long, :city, :been_here_times
 
-  def initialize id, name, latitude, longitude
-    @id   = id
-    @name = name
-    @lat  = latitude
-    @long = longitude
+  def initialize hash, been_here
+    @id               = hash["id"]
+    @name             = hash["name"]
+    @lat              = hash["location"]["lat"]
+    @long             = hash["location"]["lng"]
+    @city             = hash["location"]["city"]
+    @been_here_times  = been_here
   end
 
 end
