@@ -1,8 +1,3 @@
-require 'httparty'
-require 'ostruct'
-require './venue_list'
-require './error'
-
 class Foursquare
 
   VERSION_DATE = "20120101"

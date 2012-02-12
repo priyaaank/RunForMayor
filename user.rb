@@ -1,6 +1,3 @@
-require './access_config'
-require './venue_list'
-
 class User
 
   attr_accessor :id, :token

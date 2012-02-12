@@ -1,5 +1,3 @@
-require './foursquare'
-
 class Skywrap
 
   def initialize user, venues

@@ -1,5 +1,3 @@
-require 'yaml'
-
 class AccessConfig
   
   def initialize

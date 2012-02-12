@@ -1,6 +1,3 @@
-require './foursquare'
-require './venue'
-
 class VenueList
 
   DEFAULT_LIMIT  = 250
