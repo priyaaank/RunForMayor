@@ -1,6 +1,7 @@
 require 'httparty'
 require 'ostruct'
 require './venue_list'
+require './error'
 
 class Foursquare
 
@@ -21,7 +22,8 @@ class Foursquare
     url = "/checkins/add"
     options = {:body => { "venueId" => venue.id, "broadcast" => "public", 
                           "oauth_token" => user.token, "v" => VERSION_DATE}}
-    post(url, options)
+    resp = post(url, options)
+    Error.new(resp).print_if_error("Checking in at #{venue.name}")
   end
 
   private
