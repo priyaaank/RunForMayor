@@ -8,12 +8,20 @@ class Foursquare
 
   include HTTParty
   base_uri 'https://api.foursquare.com/v2'
+  headers 'Content-Type' => 'application/x-www-form-urlencoded'
 
   def self.venue_history user, options = {}
     url = "/users/#{user.id}/venuehistory?oauth_token=#{user.token}&v=#{VERSION_DATE}"
     url = append_options_to(url, options)
     hash = OpenStruct.new(get(url))
     hash.response["venues"] || {}
+  end
+
+  def self.checkin_user_at user, venue
+    url = "/checkins/add"
+    options = {:body => { "venueId" => venue.id, "broadcast" => "public", 
+                          "oauth_token" => user.token, "v" => VERSION_DATE}}
+    post(url, options)
   end
 
   private

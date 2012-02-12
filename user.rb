@@ -16,7 +16,3 @@ class User
   end
 
 end
-
-User.new.visited_venues.each do |venue|
-  puts "#{venue.name} :: #{venue.id}"
-end
