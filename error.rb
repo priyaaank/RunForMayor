@@ -6,9 +6,8 @@ class Error
   end
 
   def print_if_error msg
-    unless @error.nil?
-      puts "FAILED :: #{msg} :: #{@error}"
-    end
+    failure_msg = "FAILED :: #{msg} :: #{@error}"
+    puts (error.nil? ? failure_msg : msg)
   end
 
 end
