@@ -18,7 +18,7 @@ class VenueList
   private
 
   def populate
-    (1..(@count / DEFAULT_LIMIT) + 1).each {|index| populate_venues_with_params(DEFAULT_LIMIT, current_offset(index))}
+    (1..((@count / DEFAULT_LIMIT) + 1)).each {|index| populate_venues_with_params(DEFAULT_LIMIT, current_offset(index))}
     @venues
   end
 
@@ -31,7 +31,7 @@ class VenueList
     hash["items"].each do |item|
       @venues = [] if venues.nil?
       venue_details = Venue.new(item["venue"], item["beenHere"])
-      (@venues << venue_details) unless @filters.exclude?(venue_details)
+      (@venues << venue_details) if @filters.include?(venue_details)
     end
   end
 

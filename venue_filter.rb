@@ -1,12 +1,12 @@
 class VenueFilter 
 
-  FILTERS = [LocationFilter.new]
+  FILTERS = [LocationFilter.new, DailySpotFilter.new]
 
-  def exclude? venue
+  def include? venue
     FILTERS.each do |filter|
-      return true if filter.exclude?(venue)
+      return false unless filter.include?(venue)
     end
-    false
+    true
   end
 
 end
