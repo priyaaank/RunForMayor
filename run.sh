@@ -1,0 +1,2 @@
+#!/bin/bash
+ruby ./run.rb

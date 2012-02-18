@@ -1,0 +1,5 @@
+Some of the things that I am using to construct rules/filters in my application:
+
+* I can checkin into a building that has a category office; as many times as I like. so no restrictions there.
+* I think I have a allowed limit of 30 checkins per 24 hours. Which means I should be doing a checkin every 48 minute. This also does not violate the limit of 4 checkins every 15 minutes. 
+* I should also give priority to the places where the checkin's for last 60 days are least. This has a better probability that I can become mayor sooner. 
