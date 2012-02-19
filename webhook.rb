@@ -12,7 +12,6 @@ end
 
 get '/autocheckin/:secret' do
   if AccessConfig.new.webhook_secret == params[:secret]
-    puts User.new
     "Booya! you know this shitz man!"
   else
     "Move along buddy! There's nothing to see here"
