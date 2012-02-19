@@ -8,7 +8,7 @@ class VenueList
   def initialize user
     @count     = 0
     @user      = user
-    @filters   = VenueFilter.new
+    @filters   = Filters::VenueFilter.new
   end
 
   def all
