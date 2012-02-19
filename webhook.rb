@@ -11,5 +11,9 @@ get '/hi' do
 end
 
 get '/autocheckin/:secret' do
-  Day.today.name
+  if AccessConfig.webhook_sceret == params[:secret]
+    "Booya! you know this shitz man!"
+  else
+    "Move along buddy! There's nothing to see here"
+  end
 end

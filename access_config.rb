@@ -12,6 +12,10 @@ class AccessConfig
     extract "city"
   end
 
+  def webhook_secret
+    extract "webhook_sceret"
+  end
+
   private
 
   def extract key
