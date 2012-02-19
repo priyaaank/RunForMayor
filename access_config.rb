@@ -1,7 +1,7 @@
 class AccessConfig
   
   def initialize
-    @config = @config = YAML::load(File.open("./config/4sq_config.yml"))
+    @config = YAML.load(ERB.new(File.read("./config/4sq_config.yml")).result)
   end
 
   def access_token

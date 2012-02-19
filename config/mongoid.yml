@@ -1,0 +1,11 @@
+defaults: &defaults
+  uri: <%= ENV["MONGOLAB_URI"] %>
+  allow_dynamic_fields: false
+  logger: false
+  persist_in_safe_mode: true
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

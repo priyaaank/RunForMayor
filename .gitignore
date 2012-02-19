@@ -1,3 +1,1 @@
-access_token
-config/4sq_config.yml
-config/mongoid.yml
+.env
