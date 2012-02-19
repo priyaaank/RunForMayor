@@ -13,7 +13,7 @@ class AccessConfig
   end
 
   def webhook_secret
-    extract "webhook_sceret"
+    extract "webhook_secret"
   end
 
   private
