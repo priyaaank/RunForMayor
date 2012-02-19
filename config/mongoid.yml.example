@@ -1,0 +1,8 @@
+defaults: &defaults
+  uri: "mongodb://<username>:<password>@<host>:<port>/<db_name>"
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
