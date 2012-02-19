@@ -19,6 +19,7 @@ class Foursquare
                           "oauth_token" => user.token, "v" => VERSION_DATE}}
     resp = post(url, options)
     Error.new(resp).print_if_error("Checking in at #{venue.name}")
+    Day.today.add_checkin Checkin.for_venue(venue)
   end
 
   private
