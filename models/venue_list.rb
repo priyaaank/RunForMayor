@@ -8,7 +8,7 @@ class VenueList
   def initialize user
     @count     = 0
     @user      = user
-    @filters   = Filters::VenueFilter.new
+    @filter    = Filters::Facilitator.new
   end
 
   def all
@@ -27,15 +27,21 @@ class VenueList
   end
 
   def initialize_venues_from hash
+    all_venues = []
     @count = hash["count"] if @count != hash["count"]
     hash["items"].each do |item|
-      @venues = [] if venues.nil?
-      venue_details = Venue.new(item["venue"], item["beenHere"])
-      (@venues << venue_details) if @filters.include?(venue_details)
+      all_venues << Venue.new(item["venue"], item["beenHere"])
     end
+    @venues = filter_venues(all_venues)
   end
 
   def current_offset index
     (DEFAULT_LIMIT * (index-1))
+  end
+
+  private
+
+  def filter_venues all_venues
+    @filter.filtered_venues_from all_venues
   end
 end

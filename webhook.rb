@@ -13,6 +13,6 @@ end
 get "/autocheckin/#{AccessConfig.new.webhook_secret}" do
     user = User.new
     venues = user.visited_venues
-    Skywrap.new(user, venues).teleport_and_checkin
+    Skywrap.new(user, [venues.first]).teleport_and_checkin
     "Shine on!"
 end
