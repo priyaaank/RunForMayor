@@ -14,11 +14,11 @@ class Foursquare
   end
 
   def self.checkin_user_at user, venue
-    url = "/checkins/add"
-    options = {:body => { "venueId" => venue.id, "broadcast" => "public", 
-                          "oauth_token" => user.token, "v" => VERSION_DATE}}
-    resp = post(url, options)
-    Error.new(resp).print_if_error("Checking in at #{venue.name}")
+    # url = "/checkins/add"
+    # options = {:body => { "venueId" => venue.id, "broadcast" => "public", 
+                          # "oauth_token" => user.token, "v" => VERSION_DATE}}
+    # resp = post(url, options)
+    # Error.new(resp).print_if_error("Checking in at #{venue.name}")
     Day.today.add_checkin Checkin.for_venue(venue)
   end
 
