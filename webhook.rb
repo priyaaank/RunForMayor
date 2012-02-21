@@ -6,6 +6,8 @@ require 'sinatra'
 Dir["models/**/*.rb"].sort.each {|file| require_relative file if (file.include?(".rb") and file != 'run.rb') }
 Mongoid.load!("./config/mongoid.yml")
 
+set :server, %w[thin mongrel webrick]
+
 get '/' do
   "Dragons be here!"
 end
