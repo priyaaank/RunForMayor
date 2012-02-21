@@ -7,3 +7,7 @@ gem 'sinatra'
 gem 'heroku'
 gem 'foreman'
 gem 'thin'
+
+group :test do
+  gem 'rspec'
+end

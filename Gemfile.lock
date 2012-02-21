@@ -13,6 +13,7 @@ GEM
       bson (= 1.5.2)
     builder (3.0.0)
     daemons (1.1.8)
+    diff-lcs (1.1.3)
     eventmachine (0.12.10)
     foreman (0.39.0)
       term-ansicolor (~> 1.0.7)
@@ -42,6 +43,14 @@ GEM
       rack
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rspec (2.7.0)
+      rspec-core (~> 2.7.0)
+      rspec-expectations (~> 2.7.0)
+      rspec-mocks (~> 2.7.0)
+    rspec-core (2.7.1)
+    rspec-expectations (2.7.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.7.0)
     rubyzip (0.9.6.1)
     sinatra (1.3.0)
       rack (~> 1.3)
@@ -65,5 +74,6 @@ DEPENDENCIES
   heroku
   httparty
   mongoid
+  rspec
   sinatra
   thin
