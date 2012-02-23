@@ -17,5 +17,5 @@ get "/autocheckin/#{AccessConfig.new.webhook_secret}" do
     venues = user.visited_venues
     Skywrap.new(user, [venues.first]).teleport_and_checkin
     status 200
-    body "#{venues.first}"
+    body (venues.empty? ? "" : venues.first.name)
 end
