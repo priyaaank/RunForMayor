@@ -16,5 +16,6 @@ get "/autocheckin/#{AccessConfig.new.webhook_secret}" do
     user = User.new
     venues = user.visited_venues
     Skywrap.new(user, [venues.first]).teleport_and_checkin
-    "Shine on!"
+    status 200
+    body "#{venues.first}"
 end

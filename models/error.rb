@@ -7,7 +7,7 @@ class Error
 
   def print_if_error msg
     failure_msg = "FAILED :: #{msg} :: #{@error}"
-    puts (@error.nil? ? msg : failure_msg)
+    # puts (@error.nil? ? msg : failure_msg)
   end
 
 end

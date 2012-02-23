@@ -29,6 +29,7 @@ class VenueList
   def initialize_venues_from hash
     all_venues = []
     @count = hash["count"] if @count != hash["count"]
+    @venues = [] and return if hash["items"].nil? 
     hash["items"].each do |item|
       all_venues << Venue.new(item["venue"], item["beenHere"])
     end
